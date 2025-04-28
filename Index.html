@@ -30,6 +30,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+ <script>
+        // JavaScript code here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tìm tất cả các thẻ <p> trong trang
+            var paragraphs = document.querySelectorAll('p');
+
+            // Lặp qua tất cả các thẻ <p>
+            paragraphs.forEach(function(paragraph) {
+                // Kiểm tra nếu nội dung văn bản của thẻ <p> là "Click here"
+                if (paragraph.textContent.trim() === 'Click here') {
+                    // Tạo thẻ <a> mới
+                    var link = document.createElement('a');
+                    
+                    // Đặt thuộc tính href cho thẻ <a> (URL mà bạn muốn mở khi click)
+                    link.href = 'https://www.google.com/'; // Thay đổi URL tùy theo nhu cầu của bạn
+                    
+                    // Đặt thuộc tính target="_blank" để mở trang trong tab mới
+                    link.target = '_blank';
+                    
+                    // Đặt nội dung văn bản của thẻ <a> giống với nội dung thẻ <p>
+                    link.textContent = paragraph.textContent;
+                    
+                    // Thay thế thẻ <p> bằng thẻ <a>
+                    paragraph.parentNode.replaceChild(link, paragraph);
+                }
+            });
+        });
+    </script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK79CQHJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
